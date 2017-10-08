@@ -142,7 +142,7 @@ public:
         base58Prefixes[SECRET_KEY]     = {88+128};                 // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x3a, 0x80, 0x61, 0xa0}; // Testnet divecoin BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_SECRET_KEY] = {0x3a, 0x80, 0x58, 0x37}; // Testnet divecoin BIP32 prvkeys start with 'DRKP'
-        base58Prefixes[EXT_COIN_TYPE]  = {0x80000001};             // Testnet divecoin BIP44 coin type is '5' (All coin's testnet default)
+        base58Prefixes[EXT_COIN_TYPE]  = {0x80000001}.convert_to_container<std::vector<unsigned char> >();             // Testnet divecoin BIP44 coin type is '5' (All coin's testnet default)
     }
     virtual Network NetworkID() const { return CChainParams::TESTNET; }
 };
